@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome Ananya Ji ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Parisienne&display=swap');
+
+:root{--gold:#e6c77a;--cream:#fff8ed;--rose:#d8a39b;--wine:#3a1821;--ink:#24151a}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;background:#160b12;color:var(--cream);font-family:'Playfair Display',serif}
+body{overflow-x:hidden}
+button{font:inherit}
+.scene{min-height:100vh;display:none;position:relative;overflow:hidden;padding:36px 20px}
+.scene.active{display:flex;align-items:center;justify-content:center}
+.bg{position:absolute;inset:0;background:
+radial-gradient(circle at 50% 25%,rgba(230,199,122,.16),transparent 28%),
+radial-gradient(circle at 20% 80%,rgba(216,163,155,.16),transparent 26%),
+linear-gradient(145deg,#140910,#2b121d 52%,#12070e)}
+.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:54px 54px;opacity:.11}
+.content{position:relative;z-index:2;text-align:center;max-width:900px;width:100%}
+.kicker{letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-size:.78rem}
+h1{font-family:Cinzel,serif;font-size:clamp(2.4rem,8vw,6rem);margin:18px 0 10px;letter-spacing:.04em}
+.script{font-family:Parisienne,cursive;font-size:clamp(2.4rem,6vw,4.5rem);color:#f0c9bd}
+.subtitle{font-size:clamp(1rem,2vw,1.25rem);opacity:.86;line-height:1.7}
+.btn{border:1px solid rgba(230,199,122,.65);background:rgba(230,199,122,.1);color:var(--cream);padding:13px 22px;border-radius:999px;cursor:pointer;margin:10px 6px;transition:.25s}
+.btn:hover{background:rgba(230,199,122,.2);transform:translateY(-2px)}
+.music{position:fixed;right:16px;top:16px;z-index:20;font-size:.85rem;padding:10px 15px}
+.balloons{height:390px;display:flex;align-items:center;justify-content:center;gap:clamp(8px,4vw,35px);flex-wrap:wrap;margin:18px auto}
+.balloon{width:125px;height:160px;border-radius:50% 50% 46% 46%;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:#fff;font-family:Cinzel,serif;font-size:1.2rem;font-weight:700;box-shadow:inset -12px -18px 25px rgba(0,0,0,.18),0 14px 35px rgba(0,0,0,.18);position:relative;cursor:pointer;animation:float 3.5s ease-in-out infinite}
+.balloon:nth-child(1){background:#9b5063;animation-delay:.1s}.balloon:nth-child(2){background:#b77a57;animation-delay:.5s}.balloon:nth-child(3){background:#806a9e;animation-delay:.9s}.balloon:nth-child(4){background:#6c8e83;animation-delay:1.3s}
+.balloon:after{content:'';position:absolute;bottom:-42px;left:50%;width:1px;height:45px;background:#d9c1b4}
+@keyframes float{50%{transform:translateY(-13px)}}
+.pop{animation:pop .35s forwards!important}@keyframes pop{to{transform:scale(1.35);opacity:0}}
+.cake-wrap{position:relative;max-width:520px;margin:20px auto 8px;cursor:crosshair}
+.cake{width:100%;border-radius:18px;display:block;box-shadow:0 25px 70px rgba(0,0,0,.45)}
+.knife{position:absolute;top:14%;left:50%;width:8px;height:70%;background:linear-gradient(90deg,#eee,#777,#fff);border-radius:8px;transform:rotate(7deg);opacity:0;pointer-events:none;box-shadow:0 0 14px rgba(255,255,255,.5)}
+.cake-wrap.cut .knife{animation:cut 1.2s forwards}@keyframes cut{0%{left:18%;opacity:0}20%{opacity:1}100%{left:78%;opacity:1}}
+.cake-note{margin-top:10px;color:#f4d8c9}
+.candle-area{display:none;margin:18px auto;max-width:650px}
+.candle-row{font-size:2.7rem;letter-spacing:.3em;margin:10px}
+.flame{display:inline-block;animation:flicker .7s infinite alternate}@keyframes flicker{to{transform:scale(.85) translateY(2px);opacity:.7}}
+.instructions{font-size:1rem;opacity:.82}
+.letter-stage{max-width:900px}
+.digital-letter{width:min(100%,760px);border-radius:8px;box-shadow:0 25px 80px rgba(0,0,0,.5);display:block;margin:18px auto}
+.original{width:min(100%,700px);max-height:75vh;object-fit:contain;border-radius:8px;box-shadow:0 25px 80px rgba(0,0,0,.5);display:block;margin:18px auto}
+.final-heart{font-size:5rem;animation:beat 1.3s infinite}@keyframes beat{50%{transform:scale(1.12)}}
+.hidden{display:none!important}
+.fade{animation:fade .7s ease}@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@media(max-width:600px){.scene{padding:28px 14px}.balloons{height:430px}.balloon{width:105px;height:135px;font-size:1rem}.music{font-size:.75rem}.cake-wrap{margin-top:30px}}
+</style>
+<style id="cinematic">
+:root{--gold:#f2d18a;--pink:#e9b7b8;--deep:#120810;--paper:#fff7ea}
+body{background:#0b0509}
+.scene{min-height:100svh}
+.scene:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,transparent 25%,rgba(0,0,0,.32) 100%)}
+.content{filter:drop-shadow(0 15px 35px rgba(0,0,0,.18))}
+.btn{backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+#s1 h1{font-size:clamp(2.6rem,9vw,6.5rem);text-shadow:0 4px 30px rgba(242,209,138,.16)}
+#s1 .script{animation:welcome 2s ease both}
+@keyframes welcome{from{opacity:0;transform:translateY(18px);letter-spacing:.3em}to{opacity:1;transform:none;letter-spacing:normal}}
+.balloon{transition:transform .25s,filter .25s}
+.balloon:before{content:"";position:absolute;top:18px;left:22px;width:24px;height:45px;border-radius:50%;background:rgba(255,255,255,.18);transform:rotate(25deg)}
+.balloon.pop{animation:balloonPop .48s forwards!important}
+@keyframes balloonPop{0%{transform:scale(1)}45%{transform:scale(1.18)}100%{transform:scale(0);opacity:0}}
+.balloon.pop:after{display:none}
+.balloon-burst{position:absolute;pointer-events:none;font-size:1.5rem;animation:burst .7s ease forwards}
+@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(30deg);opacity:0}}
+#s3 .script{font-size:clamp(2.7rem,7vw,5.4rem);text-shadow:0 8px 30px rgba(233,183,184,.2)}
+.cake-wrap{touch-action:none;user-select:none}
+.cake-wrap:before{content:"";position:absolute;inset:-18px;border:1px solid rgba(242,209,138,.25);border-radius:26px;pointer-events:none}
+.cake-wrap.cut .cake{animation:cakeGlow .9s ease}
+@keyframes cakeGlow{50%{filter:brightness(1.13) saturate(1.12)}}
+.knife{height:78%;width:6px;border:1px solid #fff;box-shadow:0 0 25px rgba(255,255,255,.55)}
+.candle-area{animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.flame{filter:drop-shadow(0 0 12px #ffd58a)}
+#s5 .content{animation:birthdayReveal 1s ease both}
+@keyframes birthdayReveal{0%{opacity:0;transform:scale(.82)}65%{transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+#s5 .script{letter-spacing:.12em}
+.digital-letter{transition:transform .45s,box-shadow .45s}
+.digital-letter:hover{transform:translateY(-5px) rotate(.2deg);box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.original{background:#fff8ed;padding:8px}
+#s7 .original{animation:paperReveal .9s ease both}
+@keyframes paperReveal{from{opacity:0;transform:translateY(35px) rotate(-1deg)}to{opacity:1;transform:none}}
+.heart-particle{position:fixed;z-index:30;pointer-events:none;font-size:20px;animation:heartFall 1.6s ease-out forwards}
+@keyframes heartFall{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0}}
+</style>
+
+
+<style id="final-polish">
+.balloon{will-change:transform;animation:realFloat 4.2s ease-in-out infinite}
+.balloon:nth-child(1){animation-delay:-.2s}.balloon:nth-child(2){animation-delay:-1.7s}.balloon:nth-child(3){animation-delay:-.8s}.balloon:nth-child(4){animation-delay:-2.5s}
+.balloon span{opacity:0;transition:opacity .25s;font-family:Cinzel,serif}
+.balloon.revealed span{opacity:1}
+@keyframes realFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}
+  25%{transform:translate3d(7px,-18px,0) rotate(2deg)}
+  50%{transform:translate3d(-4px,-30px,0) rotate(-2deg)}
+  75%{transform:translate3d(-9px,-13px,0) rotate(1deg)}
+}
+.balloon.pop{animation:none!important}
+.balloon.pop span{opacity:1}
+.balloon.pop{transform:scale(1.08)}
+.balloon.pop:before{content:"✦  ✧  ✦";position:absolute;inset:auto;top:45%;left:0;width:100%;height:auto;background:none;font-size:22px;color:#fff;animation:burstText .65s ease-out forwards}
+@keyframes burstText{to{transform:scale(2.1);opacity:0}}
+.cake-wrap{touch-action:none}
+.cake-knife-follow{position:absolute;left:8%;top:5%;width:34px;height:88%;z-index:5;pointer-events:none;opacity:0;transform-origin:50% 50%;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
+.cake-knife-follow .blade{position:absolute;left:12px;top:0;width:7px;height:76%;border-radius:6px 6px 2px 2px;background:linear-gradient(90deg,#777,#f7f7f7,#aaa);border:1px solid #fff}
+.cake-knife-follow .handle{position:absolute;left:4px;bottom:0;width:23px;height:27%;border-radius:8px 8px 14px 14px;background:linear-gradient(90deg,#25141b,#7a4251,#1b0d12);box-shadow:inset 2px 0 3px rgba(255,255,255,.18)}
+.cake-wrap.knife-active .cake-knife-follow{opacity:1}
+.cut-line{position:absolute;left:50%;top:8%;height:84%;width:3px;border-radius:5px;background:rgba(255,245,215,.9);box-shadow:0 0 15px rgba(255,220,160,.8);opacity:0;z-index:4;pointer-events:none}
+.cake-wrap.cut .cut-line{opacity:1;animation:cutLine .6s ease}
+@keyframes cutLine{from{height:0}to{height:84%}}
+.cake-wrap.cut .cake{animation:cakeGlow .8s ease}
+.candle-row .flame{transition:opacity .25s,transform .25s}
+.candle-row.blown .flame{opacity:0;transform:translateY(-20px) scale(.5)}
+</style>
+</head>
+<body>
+<audio id="music" loop preload="none">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<button id="musicBtn" class="btn music">🎵 Play Music</button>
+
+<section id="s1" class="scene active"><div class="bg"></div><div class="stars"></div><div class="content fade">
+  <h1>Welcome Ananya Ji</h1>
+  <button class="btn" data-next="s2">Open Your Surprise →</button>
+</div></section>
+
+<section id="s2" class="scene"><div class="bg"></div><div class="content fade">
+  <div class="kicker">A few words for the birthday girl</div>
+  <h1 style="font-size:clamp(2rem,6vw,4rem)">Pop the balloons 🎈</h1>
+  <p class="subtitle">Tap each balloon to reveal your birthday message.</p>
+  <div class="balloons">
+    <div class="balloon" data-word="HAPPY"><span></span></div>
+    <div class="balloon" data-word="18TH"><span></span></div>
+    <div class="balloon" data-word="BIRTHDAY"><span></span></div>
+    <div class="balloon" data-word="CUTIE"><span></span></div>
+  </div>
+  <button id="balloonNext" class="btn hidden">Let's move on →</button>
+</div></section>
+
+<section id="s3" class="scene"><div class="bg"></div><div class="content fade">
+  <div class="kicker">The moment you've been waiting for</div>
+  <h1 style="font-size:clamp(2rem,6vw,4.4rem)">LET'S MOVE ON TO YOUR FAV PART</h1>
+  <div class="script">THE CAKE CUTTING 🎂</div>
+  <button class="btn" data-next="s4">I'm ready →</button>
+</div></section>
+
+<section id="s4" class="scene"><div class="bg"></div><div class="content fade">
+  <div class="kicker">Your birthday cake</div>
+  <h1 style="font-size:clamp(2rem,6vw,4rem)">Make a wish ✨</h1>
+  <div class="cake-wrap" id="cakeWrap" aria-label="Tap the cake to cut it">
+    <img class="cake" src="assets/cake.jpg" alt="Birthday cake">
+    <div class="cake-knife-follow" id="cakeKnife" aria-hidden="true"><div class="blade"></div><div class="handle"></div></div>
+    <div class="cut-line"></div>
+  </div>
+  <p id="cakeHint" class="cake-note">Tap the cake once to cut it.</p>
+  <div id="candles" class="candle-area">
+    <div class="candle-row"><span class="flame">🔥</span> <span class="flame">🔥</span> <span class="flame">🔥</span> <span class="flame">🔥</span></div>
+    <p class="instructions">Now blow the candles — or tap the button if your browser doesn't allow microphone access.</p>
+    <button id="blowBtn" class="btn">💨 Blow out the candles</button>
+  </div>
+</div></section>
+
+<section id="s5" class="scene"><div class="bg"></div><div class="stars"></div><div class="content fade">
+  <div class="script">HAPPY BIRTHDAY</div>
+  <h1 style="font-size:clamp(3rem,9vw,6rem)">ANANYA ❤️</h1>
+  <p class="subtitle">Okay… there's one more thing.</p>
+  <button class="btn" data-next="s6">One more thing →</button>
+</div></section>
+
+<section id="s6" class="scene"><div class="bg"></div><div class="content letter-stage fade">
+  <div class="kicker">Something I wrote for you</div>
+  <h1 style="font-size:clamp(2rem,6vw,4rem)">A little letter 💌</h1>
+  <img class="digital-letter" src="assets/digital-letter.png" alt="Digital birthday letter">
+  <button class="btn" data-next="s7">But there's something else…</button>
+</div></section>
+
+<section id="s7" class="scene"><div class="bg"></div><div class="content letter-stage fade">
+  <div class="kicker">The real one</div>
+  <h1 style="font-size:clamp(2rem,6vw,4rem)">I wanted you to see this too.</h1>
+  <img class="original" src="assets/original-letter.jpg" alt="Original handwritten birthday letter">
+  <button class="btn" data-next="s8">♡ One last thing</button>
+</div></section>
+
+<section id="s8" class="scene"><div class="bg"></div><div class="content fade">
+  <div class="final-heart">❤️</div>
+  <div class="script">Happy Birthday, Ananya Ji</div>
+  <p class="subtitle">May this little surprise remind you how loved you are.</p>
+  <div class="script" style="font-size:2.4rem">— Yours Truly, Otteru 🦦</div>
+</div></section>
+
+<script>
+const scenes=[...document.querySelectorAll('.scene')];
+function go(id){scenes.forEach(s=>s.classList.toggle('active',s.id===id));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.next)));
+
+const music=document.getElementById('music'), musicBtn=document.getElementById('musicBtn');
+musicBtn.addEventListener('click',async()=>{
+  if(music.paused){try{await music.play();musicBtn.textContent='⏸ Pause Music'}catch(e){alert('Add a legally obtained music.mp3 file to this website folder, then press Play Music again.')}}else{music.pause();musicBtn.textContent='🎵 Play Music'}
+});
+
+const balloons=[...document.querySelectorAll('.balloon')];
+let popped=0;
+balloons.forEach(b=>b.addEventListener('click',()=>{
+  if(b.classList.contains('pop'))return;
+  b.classList.add('pop');
+  b.querySelector('span').textContent=b.dataset.word;
+  b.querySelector('span').style.opacity='1';
+  popped++;
+  setTimeout(()=>{
+    b.classList.add('revealed');
+    if(popped===4)document.getElementById('balloonNext').classList.remove('hidden');
+  },220);
+}));
+document.getElementById('balloonNext').addEventListener('click',()=>go('s3'));
+
+
+const cakeWrap=document.getElementById('cakeWrap');
+const cakeKnife=document.getElementById('cakeKnife');
+const hint=document.getElementById('cakeHint');
+const candles=document.getElementById('candles');
+let cutDone=false;
+
+cakeWrap.addEventListener('click',()=>{
+  if(cutDone)return;
+  cutDone=true;
+  // A simple tap triggers a clean, reliable cutting animation on desktop and mobile.
+  cakeKnife.style.left='50%';
+  cakeKnife.style.top='5%';
+  cakeWrap.classList.add('knife-active');
+  setTimeout(()=>cakeWrap.classList.add('cut'),80);
+  setTimeout(()=>{
+    hint.textContent='Perfect cut! 🎂 Now blow out the candles.';
+    candles.style.display='block';
+  },700);
+});
+
+const blowBtn=document.getElementById('blowBtn');
+const flameRow=document.querySelector('.candle-row');
+let micStream=null,audioCtx=null,analyser=null,raf=null;
+
+function finishBlow(){
+  if(raf)cancelAnimationFrame(raf);
+  if(micStream)micStream.getTracks().forEach(t=>t.stop());
+  if(audioCtx)audioCtx.close().catch(()=>{});
+  micStream=null;audioCtx=null;analyser=null;
+  flameRow.classList.add('blown');
+  setTimeout(()=>{
+    document.querySelectorAll('.flame').forEach(f=>f.textContent='✨');
+    blowBtn.textContent='✨ Wish made! Continue →';
+    blowBtn.onclick=()=>go('s5');
+  },280);
+}
+
+async function listenForBlow(){
+  if(!navigator.mediaDevices?.getUserMedia){finishBlow();return}
+  try{
+    micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+    audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    const src=audioCtx.createMediaStreamSource(micStream);
+    analyser=audioCtx.createAnalyser(); analyser.fftSize=256; src.connect(analyser);
+    const data=new Uint8Array(analyser.fftSize);
+    let loudSince=0;
+    blowBtn.textContent='💨 Blow toward your phone…';
+    function monitor(){
+      analyser.getByteTimeDomainData(data);
+      let sum=0;
+      for(const v of data){const x=(v-128)/128;sum+=x*x}
+      const rms=Math.sqrt(sum/data.length);
+      if(rms>.12){
+        if(!loudSince)loudSince=performance.now();
+        if(performance.now()-loudSince>220){finishBlow();return}
+      }else loudSince=0;
+      raf=requestAnimationFrame(monitor);
+    }
+    monitor();
+  }catch(e){finishBlow()}
+}
+blowBtn.addEventListener('click',listenForBlow);
+</script>
+
+<script id="cinematic-js">
+(function(){
+ const root=document.body;
+ function burstAt(el){
+   const r=el.getBoundingClientRect();
+   for(let i=0;i<12;i++){
+     const p=document.createElement('span');
+     p.className='balloon-burst';
+     p.textContent=['✦','♡','•','✧'][i%4];
+     p.style.left=(r.left+r.width/2)+'px';p.style.top=(r.top+r.height/2)+'px';
+     p.style.setProperty('--x',((Math.random()-.5)*170)+'px');
+     p.style.setProperty('--y',((Math.random()-.5)*150)+'px');
+     document.body.appendChild(p);setTimeout(()=>p.remove(),750);
+   }
+ }
+ document.querySelectorAll('.balloon').forEach(b=>{
+   b.addEventListener('click',()=>burstAt(b),{capture:true});
+ });
+ const blow=document.getElementById('blowBtn');
+ let micStream=null, audioCtx=null, analyser=null, raf=null;
+ async function tryMic(){
+   if(!navigator.mediaDevices?.getUserMedia){extinguish();return}
+   try{
+     micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+     audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+     const src=audioCtx.createMediaStreamSource(micStream);
+     analyser=audioCtx.createAnalyser(); analyser.fftSize=256; src.connect(analyser);
+     const data=new Uint8Array(analyser.frequencyBinCount);
+     let loudSince=0;
+     function loop(){
+       analyser.getByteTimeDomainData(data);
+       let sum=0; for(const v of data){const x=(v-128)/128;sum+=x*x}
+       const rms=Math.sqrt(sum/data.length);
+       if(rms>.11){if(!loudSince)loudSince=performance.now(); if(performance.now()-loudSince>260){stop();extinguish();return}}
+       else loudSince=0;
+       raf=requestAnimationFrame(loop);
+     }
+     loop();
+     blow.textContent='💨 Blow into your microphone…';
+     blow.onclick=()=>stop();
+   }catch(e){extinguish()}
+ }
+ function stop(){
+   if(raf)cancelAnimationFrame(raf);
+   if(micStream)micStream.getTracks().forEach(t=>t.stop());
+   if(audioCtx)audioCtx.close().catch(()=>{});
+   micStream=null;audioCtx=null;analyser=null;
+ }
+ function extinguish(){
+   stop();
+   document.querySelectorAll('.flame').forEach(f=>f.textContent='✨');
+   blow.textContent='✨ Wish made! Continue →';
+   blow.onclick=()=>go('s5');
+   for(let i=0;i<22;i++){
+     const h=document.createElement('span');h.className='heart-particle';h.textContent=['♡','♥','✦'][i%3];
+     h.style.left=(45+Math.random()*10)+'%';h.style.top=(42+Math.random()*12)+'%';
+     h.style.setProperty('--dx',((Math.random()-.5)*260)+'px');
+     h.style.setProperty('--dy',(-80-Math.random()*260)+'px');
+     h.style.setProperty('--rot',((Math.random()-.5)*70)+'deg');
+     root.appendChild(h);setTimeout(()=>h.remove(),1700);
+   }
+ }
+ // Replace fallback button handler with microphone-first behavior.
+ blow.removeEventListener('click',extinguish);
+ blow.addEventListener('click',tryMic);
+})();
+</script>
+
+</body>
+</html>
